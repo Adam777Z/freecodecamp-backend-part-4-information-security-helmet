@@ -1,29 +1,28 @@
 {
-	"author": "Adam",
-	"name": "fcc-infosec-challenges",
-	"version": "0.0.1",
-	"description": "fcc backend boilerplate",
+  "name": "fcc-infosec-challenges",
+  "description": "fcc backend boilerplate",
+  "version": "1.0.0",
   "author": "Adam",
-	"main": "server.js",
-	"scripts": {
-		"start": "node myApp.js"
-	},
-	"dependencies": {
-		"express": "^4.16.4",
+  "main": "server.js",
+  "scripts": {
+    "start": "node myApp.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
     "helmet": "^3.15.0"
-	},
-	"engines": {
-		"node": "10.14.1"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/Adam777Z/freecodecamp-backend-part-4-information-security-helmet.git"
-	},
-	"keywords": [
-		"node",
-		"hyperdev",
-		"express",
-		"freecodecamp"
-	],
-	"license": "MIT"
+  },
+  "engines": {
+    "node": "10.14.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Adam777Z/freecodecamp-backend-part-4-information-security-helmet.git"
+  },
+  "keywords": [
+    "node",
+    "hyperdev",
+    "express",
+    "freecodecamp"
+  ],
+  "license": "MIT"
 }

@@ -3,26 +3,26 @@
   "description": "fcc backend boilerplate",
   "version": "1.0.0",
   "author": "Adam",
-  "main": "server.js",
-  "scripts": {
-    "start": "node myApp.js"
-  },
-  "dependencies": {
-    "express": "^4.17.1",
-    "helmet": "^3.15.0"
-  },
-  "engines": {
-    "node": "10.14.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Adam777Z/freecodecamp-backend-part-4-information-security-helmet.git"
-  },
   "keywords": [
     "node",
     "hyperdev",
     "express",
     "freecodecamp"
   ],
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Adam777Z/freecodecamp-backend-part-4-information-security-helmet.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "helmet": "^3.15.0"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "node myApp.js"
+  },
+  "engines": {
+    "node": "10.14.1"
+  }
 }

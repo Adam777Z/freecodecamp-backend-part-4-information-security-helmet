@@ -151,7 +151,11 @@ app.use(helmet.dnsPrefetchControl());
 
 // Use helmet.noCache()
 
-app.use(helmet.noCache());
+// app.use(helmet.noCache());
+
+const noCache = require('nocache');
+
+app.use(noCache());
 
 /** 10) Content Security Policy - `helmet.contentSecurityPolicy()` */
 
@@ -160,9 +164,9 @@ app.use(helmet.noCache());
 // configuring a Content Security Policy you can prevent the injection of anything
 // unintended  into your page. This will protect your app from XSS vulnerabilities,
 // undesidered tracking, malicious frames, and much more.
-// CSP works by defining  a whitelist of content sources which are trusted, for
+// CSP works by defining a whitelist of content sources which are trusted, for
 // each kind of resource a web page may need to load (scripts, stylesheets,
-// fonts, frames,media,  and so on...). There are multiple directives available,
+// fonts, frames, media, and so on...). There are multiple directives available,
 // so a website owner can have a granular control.
 // See http://www.html5rocks.com/en/tutorials/security/content-security-policy/ ,
 // https://www.keycdn.com/support/content-security-policy/ for more details.

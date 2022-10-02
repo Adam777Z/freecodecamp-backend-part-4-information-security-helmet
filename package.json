@@ -1,11 +1,10 @@
 {
   "name": "fcc-infosec-challenges",
-  "description": "fcc backend boilerplate",
+  "description": "freeCodeCamp backend boilerplate",
   "version": "1.0.0",
   "author": "Adam",
   "keywords": [
     "node",
-    "hyperdev",
     "express",
     "freecodecamp"
   ],
@@ -24,6 +23,6 @@
     "start": "node myApp.js"
   },
   "engines": {
-    "node": "16.12.0"
+    "node": ">=16.12.0"
   }
 }

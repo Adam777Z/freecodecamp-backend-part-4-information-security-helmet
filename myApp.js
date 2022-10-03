@@ -9,7 +9,7 @@ var app = express();              // Do Not Edit
 // ----
 
 /** - Challenges - *
-********************/ 
+********************/
 
 /** 1) Install and require `helmet` */
 
@@ -102,7 +102,7 @@ app.use(helmet.ieNoOpen());
 
 /**  7) Ask browsers to access your site via HTTPS only - `helmet.hsts()` */
 
-// HTTP Strict Transport Security (HSTS) is a web security policy mechanism which 
+// HTTP Strict Transport Security (HSTS) is a web security policy mechanism which
 // helps to protect websites against protocol downgrade attacks and cookie hijacking.
 // If your website can be accessed via HTTPS you can ask user's browsers
 // to avoid using insecure HTTP. Setting the header `Strict-Transport-Security`
@@ -111,9 +111,9 @@ app.use(helmet.ieNoOpen());
 // the initial request.
 
 // Configure `helmet.hsts()` to instruct browsers to use HTTPS for the next
-// **90 days**, passing the config object {maxAge: timeInMilliseconds}. 
-// HyperDev already has **hsts** enabled, to override its settings you need to 
-// set the field `force` to `true` in the config object. To not alter hyperdev security 
+// **90 days**, passing the config object {maxAge: timeInMilliseconds}.
+// HyperDev already has **hsts** enabled, to override its settings you need to
+// set the field `force` to `true` in the config object. To not alter hyperdev security
 // policy we will intercept and restore the header, after inspecting it for testing.
 
 //**Note**:
@@ -181,8 +181,8 @@ app.use(noCache());
 // Set also the `scriptSrc` directive so that you will allow scripts to be downloaded
 // from your website, and from the domain `trusted-cdn.com`.
 //
-// **Hint**: 
-// in the `"'self'"` keyword, the single quotes are part of the keyword itself, 
+// **Hint**:
+// in the `"'self'"` keyword, the single quotes are part of the keyword itself,
 // so it needs to be enclosed in **double quotes** to be working.
 
 app.use(helmet.contentSecurityPolicy({
@@ -192,14 +192,14 @@ app.use(helmet.contentSecurityPolicy({
   }
 }));
 
-/** TIP: */ 
+/** TIP: */
 
 // `app.use(helmet())` will automatically include all the middleware
 // presented above, except `noCache()`, and `contentSecurityPolicy()`,
-// but these can be enabled if necessary. You can also disable or 
+// but these can be enabled if necessary. You can also disable or
 // set any other middleware individually, using a configuration object.
 
-// // - Example - 
+// // - Example -
 // app.use(helmet({
 //   frameguard: {              // configure
 //     action: 'deny'
@@ -221,13 +221,13 @@ app.use(helmet.contentSecurityPolicy({
 
 module.exports = app;
 var api = require('./server.js');
-app.use(express.static('public'));
+app.use('/public', express.static(process.cwd() + '/public'));
 app.disable('strict-transport-security');
 app.use('/_api', api);
-app.get("/", function (request, response) {
+app.get('/', function (request, response) {
   response.sendFile(__dirname + '/views/index.html');
 });
-var listener = app.listen(process.env.PORT || 3000, function () {
+const listener = app.listen(process.env.PORT || 3000, function () {
   console.log('Your app is listening on port ' + listener.address().port);
 });
 

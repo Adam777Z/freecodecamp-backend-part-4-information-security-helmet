@@ -120,10 +120,10 @@ app.use(helmet.ieNoOpen());
 // Configuring HTTPS on a custom website requires the acquisition of a domain,
 // and a SSL/TSL Certificate.
 
-var ninetyDaysInMilliseconds = 90*24*60*60*1000;
+var ninetyDaysInMilliseconds = 90 * 24 * 60 * 60 * 1000;
 app.use(helmet.hsts({
-  maxAge: ninetyDaysInMilliseconds,
-  force: true
+	maxAge: ninetyDaysInMilliseconds,
+	force: true
 }));
 
 /** 8) Disable DNS Prefetching - `helmet.dnsPrefetchControl()` */
@@ -186,10 +186,10 @@ app.use(noCache());
 // so it needs to be enclosed in **double quotes** to be working.
 
 app.use(helmet.contentSecurityPolicy({
-  directives: {
-    defaultSrc: ["'self'"],
-    scriptSrc: ["'self'", 'trusted-cdn.com']
-  }
+	directives: {
+		defaultSrc: ["'self'"],
+		scriptSrc: ["'self'", 'trusted-cdn.com']
+	}
 }));
 
 /** TIP: */
@@ -225,9 +225,9 @@ app.use('/public', express.static(process.cwd() + '/public'));
 app.disable('strict-transport-security');
 app.use('/_api', api);
 app.get('/', function (request, response) {
-  response.sendFile(__dirname + '/views/index.html');
-});
-const listener = app.listen(process.env.PORT || 3000, function () {
-  console.log('Your app is listening on port ' + listener.address().port);
+	response.sendFile(__dirname + '/views/index.html');
 });
 
+const listener = app.listen(process.env.PORT || 3000, function () {
+	console.log('Your app is listening on port ' + listener.address().port);
+});

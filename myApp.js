@@ -112,8 +112,8 @@ app.use(helmet.ieNoOpen());
 
 // Configure `helmet.hsts()` to instruct browsers to use HTTPS for the next
 // **90 days**, passing the config object {maxAge: timeInMilliseconds}.
-// HyperDev already has **hsts** enabled, to override its settings you need to
-// set the field `force` to `true` in the config object. To not alter hyperdev security
+// Some web hosts already have **HSTS** enabled, to override the settings you need to
+// set the field `force` to `true` in the config object. To not alter the security
 // policy we will intercept and restore the header, after inspecting it for testing.
 
 //**Note**:

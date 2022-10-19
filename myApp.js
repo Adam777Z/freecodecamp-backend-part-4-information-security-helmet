@@ -153,6 +153,9 @@ app.use(helmet.dnsPrefetchControl());
 
 // app.use(helmet.noCache());
 
+// Removed from Helmet 4
+// See for more details: https://github.com/helmetjs/helmet/issues/215
+
 const noCache = require('nocache');
 
 app.use(noCache());
